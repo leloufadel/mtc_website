@@ -366,11 +366,20 @@ export default function Nav() {
   const [openTop, setOpenTop] = useState<number | null>(null);         // which top-level menu is open
   const [activeParent, setActiveParent] = useState<string | null>(null); // which subitem (with children) is active inside panel
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && (setOpenTop(null), setActiveParent(null));
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navRef = useClickOutside<HTMLDivElement>(() => {
@@ -379,10 +388,13 @@ export default function Nav() {
   });
 
   return (
-    <header className="sticky top-0 z-50 text-white" style={{ background: "#8B8F93", backdropFilter: "blur(8px)" }}>
+    <header 
+      className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white text-gray-900 shadow-md' : 'text-white'}`}
+      style={scrolled ? {} : { background: "#8B8F93", backdropFilter: "blur(8px)" }}
+    >
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="font-semibold tracking-wide">MTC</Link>
+          <Link href="/" className={`font-semibold tracking-wide transition-colors ${scrolled ? 'text-gray-900' : 'text-white'}`}>MTC</Link>
 
           {/* Desktop */}
           <nav ref={navRef} className="hidden md:flex items-center gap-8">
@@ -391,14 +403,16 @@ export default function Nav() {
                 {top.children ? (
                   <>
                     <button
-                      className="inline-flex items-center gap-2 px-2 py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-white/40"
+                      className={`inline-flex items-center gap-2 px-2 py-1 rounded-md  transition-colors ${
+                        scrolled ? 'text-gray-900 hover:text-orange-600' : 'text-white hover:text-orange-300'
+                      }`}
                       onMouseEnter={() => setOpenTop(idx)}
                       onFocus={() => setOpenTop(idx)}
                       onClick={() => setOpenTop(openTop === idx ? null : idx)}
                       aria-expanded={openTop === idx}
                     >
                       <span className="font-medium">{top.label}</span>
-                      <ChevronDown />
+                      <ChevronDown scrolled={scrolled} />
                     </button>
 
                     {/* Small primary panel */}
@@ -417,8 +431,7 @@ export default function Nav() {
                                   <button
                                     onMouseEnter={() => setActiveParent(item.label)}
                                     onClick={() => setActiveParent(selected ? null : item.label)}
-                                    className="flex w-full items-center justify-between rounded-md px-3 py-2 text-sm hover:bg-gray-100"
-                                    style={selected ? { color: BRAND } : {}}
+                                    className="flex w-full items-center justify-between rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-orange-500 hover:text-white transition-colors"
                                   >
                                     {item.label}
                                     <ChevronRight />
@@ -426,8 +439,7 @@ export default function Nav() {
                                 ) : (
                                   <Link
                                     href={item.href || "#"}
-                                    className="block rounded-md px-3 py-2 text-sm hover:bg-gray-100"
-                                    style={{}}
+                                    className="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-orange-500 hover:text-white transition-colors"
                                   >
                                     {item.label}
                                   </Link>
@@ -451,8 +463,7 @@ export default function Nav() {
                                     <li key={gc.label}>
                                       <Link
                                         href={gc.href || "#"}
-                                        className="block rounded-md px-3 py-2 text-sm hover:bg-gray-100"
-                                        style={{}}
+                                        className="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-orange-500 hover:text-white transition-colors"
                                       >
                                         {gc.label}
                                       </Link>
@@ -465,7 +476,14 @@ export default function Nav() {
                     )}
                   </>
                 ) : (
-                  <Link href={top.href || "#"} className="px-2 py-1 rounded-md">{top.label}</Link>
+                  <Link 
+                    href={top.href || "#"} 
+                    className={`px-2 py-1 rounded-md font-medium transition-colors ${
+                      scrolled ? 'text-gray-900 hover:text-orange-600' : 'text-white hover:text-orange-300'
+                    }`}
+                  >
+                    {top.label}
+                  </Link>
                 )}
               </div>
             ))}
@@ -483,12 +501,12 @@ export default function Nav() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md focus:outline-none focus:ring-2 focus:ring-white/40"
+            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md "
             aria-label="Ouvrir le menu"
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
           >
-            <Burger open={mobileOpen} />
+            <Burger open={mobileOpen} scrolled={scrolled} />
           </button>
         </div>
       </div>
@@ -536,7 +554,7 @@ function MobileSection({ item }: { item: MenuItem }) {
                   <Link
                     key={c.label}
                     href={c.href || "#"}
-                    className="block rounded-md px-2 py-2 text-sm text-white hover:bg-white/10"
+                    className="block rounded-md px-2 py-2 text-sm text-white hover:bg-orange-500 transition-colors"
                   >
                     {c.label}
                   </Link>
@@ -559,10 +577,9 @@ function MobileSubSection({ parent }: { parent: MenuItem }) {
   return (
     <div className="mb-2">
       <button
-        className="flex w-full items-center justify-between rounded-md px-2 py-2 text-sm font-semibold"
+        className="flex w-full items-center justify-between rounded-md px-2 py-2 text-sm font-semibold text-white hover:bg-orange-500 transition-colors"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        style={{ color: BRAND, background: "rgba(242,100,24,0.12)" }}
       >
         {parent.label}
         <ChevronDown className={`${open ? "rotate-180" : ""}`} size={12} />
@@ -573,7 +590,7 @@ function MobileSubSection({ parent }: { parent: MenuItem }) {
             <Link
               key={gc.label}
               href={gc.href || "#"}
-              className="block rounded-md px-2 py-2 text-sm text-white hover:bg-white/10"
+              className="block rounded-md px-2 py-2 text-sm text-white hover:bg-orange-500 transition-colors"
             >
               {gc.label}
             </Link>
@@ -585,9 +602,9 @@ function MobileSubSection({ parent }: { parent: MenuItem }) {
 }
 
 /* ----------------- Icons ----------------- */
-function ChevronDown({ className = "", size = 14 }) {
+function ChevronDown({ className = "", size = 14, scrolled = false }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 20 20" className={`transition text-white ${className}`} aria-hidden="true">
+    <svg width={size} height={size} viewBox="0 0 20 20" className={`transition ${scrolled ? 'text-gray-900' : 'text-white'} ${className}`} aria-hidden="true">
       <path d="M5 7l5 6 5-6" fill="currentColor" />
     </svg>
   );
@@ -599,9 +616,9 @@ function ChevronRight({ size = 14 }) {
     </svg>
   );
 }
-function Burger({ open }: { open: boolean }) {
+function Burger({ open, scrolled = false }: { open: boolean; scrolled?: boolean }) {
   return (
-    <svg width="22" height="22" viewBox="0 0 24 24" className="fill-current text-white">
+    <svg width="22" height="22" viewBox="0 0 24 24" className={`fill-current transition ${scrolled ? 'text-gray-900' : 'text-white'}`}>
       {open ? (
         <path d="M18.3 5.71L12 12.01 5.7 5.7 4.29 7.11 10.59 13.4 4.29 19.7 5.7 21.11 12 14.82l6.3 6.3 1.41-1.41-6.3-6.3 6.3-6.29z" />
       ) : (

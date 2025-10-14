@@ -2,7 +2,7 @@ import Hero from "@/components/hero";
 import Image from "next/image";
 
 export default function OrganigrammePage() {
-  const titleHero = "Organigramme";
+  const titleHero = "L'organigramme";
   
   return (
     <main className="min-h-screen w-full bg-white overflow-hidden">
@@ -24,7 +24,7 @@ export default function OrganigrammePage() {
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#4C4A4A] mb-6 leading-tight">
-              Notre Organisation
+              Notre Organigramme
             </h2>
             <div className="w-24 h-1 bg-[#F26418] mx-auto rounded-full"></div>
           </div>

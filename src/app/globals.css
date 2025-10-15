@@ -185,3 +185,239 @@
 .animate-slide-up-fade {
   animation: slide-up-fade 0.6s ease-out;
 }
+
+/* Grid pattern background */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgb(0 0 0 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(0 0 0 / 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.dark .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced animations for homepage */
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out;
+}
+
+/* Hero image transitions */
+@keyframes zoom-in {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.animate-zoom-in {
+  animation: zoom-in 1.5s ease-out forwards;
+}
+
+/* Enhanced fade in up for hero text */
+@keyframes hero-text-fade {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-text {
+  animation: hero-text-fade 1s ease-out 0.3s backwards;
+}
+
+/* 3D FlipBook Animations */
+/* Cover flipping forward (opening the book) */
+@keyframes pageFlipForward {
+  0% {
+    transform: rotateY(0deg);
+    z-index: 10;
+  }
+  50% {
+    transform: rotateY(-90deg);
+    z-index: 10;
+  }
+  100% {
+    transform: rotateY(-180deg);
+    z-index: 1;
+    opacity: 0;
+  }
+}
+
+/* Left page opening animation */
+@keyframes pageOpenLeft {
+  0% {
+    transform: rotateY(-180deg);
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  50% {
+    transform: rotateY(-90deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+/* Right page staying in place during open */
+@keyframes pageOpenRight {
+  0% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+/* Left page closing animation */
+@keyframes pageCloseLeft {
+  0% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotateY(-90deg);
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(-180deg);
+    opacity: 0;
+  }
+}
+
+/* Right page flipping forward to final page */
+@keyframes pageFlipRight {
+  0% {
+    transform: rotateY(0deg);
+    z-index: 10;
+  }
+  50% {
+    transform: rotateY(-90deg);
+    z-index: 10;
+  }
+  100% {
+    transform: rotateY(-180deg);
+    z-index: 1;
+    opacity: 0;
+  }
+}
+
+/* Final page opening from right */
+@keyframes pageOpenFinal {
+  0% {
+    transform: rotateY(-180deg);
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  50% {
+    transform: rotateY(-90deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+/* Final page closing (going back) */
+@keyframes pageCloseFinal {
+  0% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotateY(-90deg);
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(-180deg);
+    opacity: 0;
+  }
+}
+
+/* Apply animations as Tailwind classes */
+.animate-page-flip-forward {
+  animation: pageFlipForward 0.8s ease-in-out forwards;
+}
+
+.animate-page-open-left {
+  animation: pageOpenLeft 0.8s ease-in-out forwards;
+}
+
+.animate-page-open-right {
+  animation: pageOpenRight 0.8s ease-in-out forwards;
+}
+
+.animate-page-close-left {
+  animation: pageCloseLeft 0.8s ease-in-out forwards;
+}
+
+.animate-page-flip-right {
+  animation: pageFlipRight 0.8s ease-in-out forwards;
+}
+
+.animate-page-open-final {
+  animation: pageOpenFinal 0.8s ease-in-out forwards;
+}
+
+.animate-page-close-final {
+  animation: pageCloseFinal 0.8s ease-in-out forwards;
+}
+
+/* Custom scrollbar for routes list */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #F26418 #f3f4f6;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #F26418 0%, #d95712 100%);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #d95712 0%, #c04710 100%);
+}

@@ -1,103 +1,125 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import Hero1 from "@/components/hero1";
+import PourquoiCollaborer from "@/components/PourquoiCollaborer";
+import FlipBook from "@/components/FlipBook";
+import FlipBookWithCard from "@/components/FlipBookWithCard";
+
+// Intervention card component
+function InterventionCard({ 
+  title, 
+  description, 
+  imageSrc,
+  delay = 0
+}: { 
+  title: string; 
+  description: string; 
+  imageSrc: string;
+  delay?: number;
+}) {
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setIsVisible(true), delay);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [delay]);
+
+  return (
+    <div
+      ref={cardRef}
+      className={`group relative overflow-hidden rounded-2xl bg-card border border-border shadow-lg hover:shadow-2xl transition-all duration-500 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
+      {/* Image Section */}
+      <div className="relative h-64 overflow-hidden">
+        <Image
+          src={imageSrc}
+          alt={title}
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+      </div>
+
+      {/* Content Section */}
+      <div className="p-6 sm:p-8">
+        <h3 className="text-xl sm:text-2xl font-bold mb-4 text-foreground group-hover:text-orange-600 transition-colors duration-300">
+          {title}
+        </h3>
+        <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+          {description}
+        </p>
+      </div>
+
+      {/* Decorative accent */}
+      <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-orange-500 to-orange-700 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top" />
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen">
+      {/* Hero Section with Image Slider */}
+      <Hero1 />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+      {/* Flip Book with Quality Service Card */}
+
+      {/* Intervention Domains Section */}
+      <section className="py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-slate-50 to-orange-50/30 dark:from-slate-950 dark:to-orange-950/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
+              Nos Domaines d'Intervention
+            </h2>
+            <div className="h-1 w-24 bg-gradient-to-r from-orange-500 to-orange-700 mx-auto mb-6 rounded-full" />
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              Notre priorité est d'offrir des solutions adaptées aux besoins spécifiques de chaque projet. Grâce à des technologies modernes et une organisation rigoureuse, nous garantissons une exécution efficace et conforme aux normes les plus élevées.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto">
+            <InterventionCard
+              title="Construction Routière"
+              description="Grâce à notre certification nationale de qualification ROUTE3, le plus haut niveau dans ce domaine, nous garantissons des réalisations durables et conformes aux standards les plus exigeants."
+              imageSrc="/images/mtc/image3-scaled.jpg"
+              delay={0}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <InterventionCard
+              title="Périmètres irrigués et axes hydrauliques"
+              description="Notre certification nationale de qualification Per/Axe3, le plus haut niveau dans ce secteur, témoigne de notre expertise et de notre engagement pour des projets performants et respectueux de l'environnement."
+              imageSrc="/images/mtc/hydraulique-scaled.jpg"
+              delay={200}
+            />
+            <InterventionCard
+              title="Barrages et bassins"
+              description="Dotés des certifications nationales de qualification Bar/Bas2 et Barrage2, nous associons robustesse technique, innovation et respect de l'environnement dans la réalisation de ces ouvrages stratégiques."
+              imageSrc="/images/mtc/basin-scaled.jpg"
+              delay={400}
+            />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      <PourquoiCollaborer />
+      <FlipBookWithCard />
+
     </div>
   );
 }

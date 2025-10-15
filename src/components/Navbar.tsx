@@ -390,11 +390,13 @@ export default function Nav() {
   return (
     <header 
       className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white text-gray-900 shadow-md' : 'text-white'}`}
-      style={scrolled ? {} : { background: "#8B8F93", backdropFilter: "blur(8px)" }}
+      style={scrolled ? {} : { background: "#6A7377", backdropFilter: "blur(8px)" }}
     >
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className={`font-semibold tracking-wide transition-colors ${scrolled ? 'text-gray-900' : 'text-white'}`}>MTC</Link>
+          <Link href="/" className="transition-opacity hover:opacity-80">
+            <Image src="/mtc-logo.webp" alt="MTC Logo" width={100} height={100} className="h-20 w-auto" />
+          </Link>
 
           {/* Desktop */}
           <nav ref={navRef} className="hidden md:flex items-center gap-8">
@@ -513,7 +515,7 @@ export default function Nav() {
 
       {/* Mobile drawer (accordion) */}
       <div className="md:hidden overflow-hidden transition-[max-height] duration-300"
-           style={{ background: "#7D8286", maxHeight: mobileOpen ? "92vh" : "0px" }}>
+           style={{ background: "#6A7377", maxHeight: mobileOpen ? "92vh" : "0px" }}>
         <div className="px-5 pb-6 pt-3">
           {MENU.map((item) => (
             <MobileSection key={item.label} item={item} />

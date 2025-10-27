@@ -4,9 +4,44 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const heroImages = [
-  "/images/projects/image1-scaled.jpg",
-  "/images/projects/image2-scaled.jpg",
-  "/images/projects/image3.webp",
+  "/images/rubon1.jpg",
+  "/images/mtc/20180530_180352-scaled.jpg",
+  "/images/bassins/20210910_125810-scaled.jpg",
+  "/images/mtc/home/image2025-10-01.0.jpeg",
+  "/images/mtc/home/image2025-10-01.1.jpeg",
+  "/images/mtc/home/image2025-10-01.2.jpeg",
+  "/images/mtc/home/image2025-10-01.3.jpg",
+  "/images/mtc/home/image2025-10-01.4.jpg",
+  "/images/mtc/home/image2025-10-01.5.jpg",
+
+ "/images/mtc/home/image2025-10-01.6.jpg",
+  "/images/mtc/home/image2025-10-01.7.jpeg",
+  "/images/mtc/home/image2025-10-01.8.jpg",
+  "/images/mtc/home/image2025-10-01.9.jpeg",
+  "/images/mtc/home/image2025-10-01.10.jpeg",
+  "/images/mtc/home/image2025-10-01.11.jpeg",
+  "/images/mtc/home/image2025-10-01.12.jpeg",
+  "/images/mtc/home/image2025-10-01.13.jpeg",
+
+  "/images/mtc/home/image2025-10-01.14.jpeg",
+  "/images/mtc/home/image2025-10-01.15.jpeg",
+  "/images/mtc/home/image2025-10-01.16.jpeg",
+  "/images/mtc/home/image2025-10-01.17.jpeg",
+  "/images/mtc/home/image2025-10-01.18.jpeg",
+  "/images/mtc/home/image2025-10-01.19.jpeg",
+
+  "/images/mtc/home/image2025-10-01.20.jpeg",
+  "/images/mtc/home/image2025-10-01.21.jpeg",
+  "/images/mtc/home/image2025-10-01.22.jpeg",
+
+  "/images/mtc/home/image2025-10-01.23.jpeg",
+  "/images/mtc/home/image2025-10-01.24.jpeg",
+  "/images/mtc/home/image2025-10-01.25.jpeg",
+  "/images/mtc/home/image2025-10-01.26.jpeg",
+  "/images/mtc/home/image2025-10-01.27.jpeg",
+  "/images/mtc/home/image2025-10-01.28.jpeg",
+  "/images/mtc/home/image2025-10-01.29.jpeg",
+  "/images/mtc/home/image2025-10-01.30.jpeg"
 ];
 
 export default function Hero1() {
@@ -26,7 +61,7 @@ export default function Hero1() {
   }, []);
 
   return (
-    <section className="relative h-screen min-h-[700px] lg:min-h-[800px] overflow-hidden bg-slate-900">
+    <section className="relative h-screen min-h-[700px] lg:min-h-[1000px] overflow-hidden bg-slate-900">
       {/* Background Images with Transitions */}
       <div className="absolute inset-0">
         {heroImages.map((image, index) => (
@@ -46,9 +81,8 @@ export default function Hero1() {
                 alt={`MTC Project ${index + 1}`}
                 fill
                 priority={index === 0}
-                className="object-cover object-center"
+                className="object-container object-center"
                 quality={95}
-                sizes="100vw"
               />
             </div>
             {/* Modern gradient overlay - darker on left for text readability */}
@@ -117,11 +151,8 @@ export default function Hero1() {
                 
                 {/* Stats Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 max-w-5xl">
-                  <div className="backdrop-blur-lg bg-gradient-to-br from-white/20 to-white/5 rounded-xl p-5 lg:p-6 border-2 border-white/30 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400/60 hover:bg-white/25 transition-all duration-300 group">
-                    <div className="text-xs sm:text-sm text-gray-200 mb-3 font-semibold uppercase tracking-wide">
-                      Ans d'expérience
-                    </div>
-                    <div className="flex items-baseline gap-1">
+                  <div className="backdrop-blur-lg bg-gradient-to-br from-white/20 to-white/5 rounded-xl p-5 lg:p-6 border-2 border-white/30 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400/60 hover:bg-white/25 transition-all duration-300 group flex flex-col items-center justify-center text-center">
+                    <div className="flex items-baseline justify-center gap-1 mb-3">
                       <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#FF6310] group-hover:text-orange-300 transition-colors">
                         +
                       </span>
@@ -129,13 +160,13 @@ export default function Hero1() {
                         15
                       </span>
                     </div>
+                    <div className="text-xs sm:text-sm text-gray-200 font-semibold uppercase tracking-wide">
+                      Ans d'expérience
+                    </div>
                   </div>
 
-                  <div className="backdrop-blur-lg bg-gradient-to-br from-white/20 to-white/5 rounded-xl p-5 lg:p-6 border-2 border-white/30 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400/60 hover:bg-white/25 transition-all duration-300 group">
-                    <div className="text-xs sm:text-sm text-gray-200 mb-3 font-semibold uppercase tracking-wide">
-                      Km de Route
-                    </div>
-                    <div className="flex items-baseline gap-1">
+                  <div className="backdrop-blur-lg bg-gradient-to-br from-white/20 to-white/5 rounded-xl p-5 lg:p-6 border-2 border-white/30 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400/60 hover:bg-white/25 transition-all duration-300 group flex flex-col items-center justify-center text-center">
+                    <div className="flex items-baseline justify-center gap-1 mb-3">
                       <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#FF6310] group-hover:text-orange-300 transition-colors">
                         +
                       </span>
@@ -143,13 +174,13 @@ export default function Hero1() {
                         708
                       </span>
                     </div>
+                    <div className="text-xs sm:text-sm text-gray-200 font-semibold uppercase tracking-wide">
+                      Km de Route
+                    </div>
                   </div>
 
-                  <div className="backdrop-blur-lg bg-gradient-to-br from-white/20 to-white/5 rounded-xl p-5 lg:p-6 border-2 border-white/30 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400/60 hover:bg-white/25 transition-all duration-300 group">
-                    <div className="text-xs sm:text-sm text-gray-200 mb-3 font-semibold uppercase tracking-wide">
-                      Unités et équipements
-                    </div>
-                    <div className="flex items-baseline gap-1">
+                  <div className="backdrop-blur-lg bg-gradient-to-br from-white/20 to-white/5 rounded-xl p-5 lg:p-6 border-2 border-white/30 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400/60 hover:bg-white/25 transition-all duration-300 group flex flex-col items-center justify-center text-center">
+                    <div className="flex items-baseline justify-center gap-1 mb-3">
                       <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#FF6310] group-hover:text-orange-300 transition-colors">
                         +
                       </span>
@@ -157,19 +188,22 @@ export default function Hero1() {
                         250
                       </span>
                     </div>
+                    <div className="text-xs sm:text-sm text-gray-200 font-semibold uppercase tracking-wide">
+                      Unités et équipements
+                    </div>
                   </div>
 
-                  <div className="backdrop-blur-lg bg-gradient-to-br from-white/20 to-white/5 rounded-xl p-5 lg:p-6 border-2 border-white/30 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400/60 hover:bg-white/25 transition-all duration-300 group">
-                    <div className="text-xs sm:text-sm text-gray-200 mb-3 font-semibold uppercase tracking-wide">
-                      Ingénieurs cadres
-                    </div>
-                    <div className="flex items-baseline gap-1">
+                  <div className="backdrop-blur-lg bg-gradient-to-br from-white/20 to-white/5 rounded-xl p-5 lg:p-6 border-2 border-white/30 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400/60 hover:bg-white/25 transition-all duration-300 group flex flex-col items-center justify-center text-center">
+                    <div className="flex items-baseline justify-center gap-1 mb-3">
                       <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#FF6310] group-hover:text-orange-300 transition-colors">
                         +
                       </span>
                       <span className="text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-br from-orange-400 to-orange-500 bg-clip-text text-[#FF6310] group-hover:from-orange-300 group-hover:to-orange-400 transition-all">
                         50
                       </span>
+                    </div>
+                    <div className="text-xs sm:text-sm text-gray-200 font-semibold uppercase tracking-wide">
+                      Ingénieurs cadres
                     </div>
                   </div>
                 </div>

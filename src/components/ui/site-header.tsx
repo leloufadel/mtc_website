@@ -64,10 +64,13 @@ export default function SiteHeader() {
 
 /* ---------- Desktop item with flyout content ---------- */
 
-type DesktopItemProps = {
+type NavItem = {
   label: string;
   href?: string;
-  children?: DesktopItemProps[];
+  children?: NavItem[];
+};
+
+type DesktopItemProps = NavItem & {
   activePath: string | null;
 };
 
@@ -137,7 +140,7 @@ function DesktopItem({ label, href = "#", children, activePath }: DesktopItemPro
   );
 }
 
-function hasGrandchildren(children?: DesktopItemProps[]) {
+function hasGrandchildren(children?: NavItem[]) {
   return children?.some((c) => c.children && c.children.length > 0);
 }
 

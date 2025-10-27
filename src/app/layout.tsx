@@ -10,7 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="fr">
       <body className="bg-surface text-neutral-dark antialiased">
         <AOSInit />
-        <Navbar />
+        <Navbar /> 
         <main className="min-h-dvh">{children}</main>
         <Footer />
       </body>

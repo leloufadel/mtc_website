@@ -94,6 +94,7 @@ export default function FlipBookWithCard({ className = "" }: FlipBookWithCardPro
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Touch swipe for mobile
@@ -113,6 +114,7 @@ export default function FlipBookWithCard({ className = "" }: FlipBookWithCardPro
       el.removeEventListener("touchstart", start);
       el.removeEventListener("touchend", end);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

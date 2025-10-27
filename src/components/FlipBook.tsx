@@ -31,6 +31,7 @@ export default function FlipBook({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Touch swipe (mobile)
@@ -50,6 +51,7 @@ export default function FlipBook({
       el.removeEventListener("touchstart", start);
       el.removeEventListener("touchend", end);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Build page stack (left -> right). Each page flips around the left edge.

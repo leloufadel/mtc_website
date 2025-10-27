@@ -1,10 +1,9 @@
 import Image from "next/image"; 
 
- export default function Hero({titleHero}: {titleHero: string}){
-    const imageHero = "/images/rubon1.jpg";
+ export default function Hero({titleHero, imageHero}: {titleHero: string, imageHero: string}){
  return (
     <section className= "relative h-[60vh] md:h-[70vh] w-full overflow-hidden" >
-   <Image src={imageHero} alt="image mtc" fill priority className="object-cover" />
+   <Image src={imageHero} alt={titleHero} fill priority className="object-cover" />
    {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
         
@@ -18,5 +17,4 @@ import Image from "next/image";
         </div>
     </section>
  )
-
  }

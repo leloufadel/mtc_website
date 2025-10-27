@@ -50,12 +50,15 @@ export default function ConstructionRoutiere() {
       ];
 
       const images: { src: string; alt?: string }[] = [
-        { src: "/images/mtc/route.jpg", alt: "Chantier 1" },
-        { src: "/images/mtc/20180530_180352-scaled.jpg", alt: "Chantier 2" },
-        { src: "/images/mtc/route.jpg", alt: "Chantier 3" },
-        { src: "/images/mtc/20180530_180352-scaled.jpg", alt: "Chantier 4" },
-        { src: "/images/mtc/route.jpg", alt: "Chantier 5" },
-        { src: "/images/mtc/20180530_180352-scaled.jpg", alt: "Chantier 6" },
+        { src: "/images/constructions/20180805_104114-1-scaled.jpg", alt: "Chantier 1" },
+        { src: "/images/constructions/APPLICATION-BB-1-150x150.jpg", alt: "Chantier 2" },
+        { src: "/images/projects/image1-scaled.jpg", alt: "Chantier 3" },
+        { src: "/images/constructions/20201004_152706-scaled.jpg", alt: "Chantier 4" },
+        { src: "/images/constructions/WhatsApp-Image-2024-04-24-at-12.12.34-150x150.jpeg", alt: "Chantier 5" },
+        { src: "/images/constructions/20180805_104114-1-scaled.jpg", alt: "Chantier 6" },
+        { src: "/images/constructions/BULL-SUR-PORTE-ENGINS-scaled.jpg", alt: "Chantier 7" },
+        { src: "/images/constructions/rubon10-150x150.jpg", alt: "Chantier 8" },
+        { src: "/images/constructions/rubon9.jpg", alt: "Chantier 9" },
       ];
 
     return (

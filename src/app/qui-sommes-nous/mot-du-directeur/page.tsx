@@ -39,18 +39,15 @@ export default function Page() {
                 {/* Image container */}
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <div className="relative aspect-[3/4] w-full">
-                <Image
-                      src="/images/rubon2.jpg"
-                      alt="El Wely BOUHEBEYNI - Directeur Général MTC"
-                  fill
-                  className="object-cover"
-                />
+                <div className="w-full h-full flex items-center justify-center bg-gray-200">
+                      <Image src="/images/DGMTC-AghdhefnaEyih.jpeg" alt="M. Aghdhefna Eyih" fill className="object-cover" />
+                    </div>
                   </div>
                   
                   {/* Name card overlay */}
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#4C4A4A] to-transparent p-6">
                     <h3 className="text-white text-xl md:text-2xl font-bold mb-1">
-                      El Wely BOUHEBEYNI
+                      M. Aghdhefna Eyih
                     </h3>
                     <p className="text-[#F26418] text-sm md:text-base font-semibold">
                       Directeur Général MTC
@@ -183,7 +180,7 @@ export default function Page() {
             <div className="inline-block">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-6 border border-white/20">
                 <p className="text-white text-2xl md:text-3xl font-bold mb-2">
-                  El Wely BOUHEBEYNI
+                  M. Aghdhefna Eyih
                 </p>
                 <p className="text-[#F26418] text-lg md:text-xl font-semibold">
                   Directeur Général MTC

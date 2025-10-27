@@ -1,0 +1,71 @@
+========================================
+INSTRUCTIONS DE CONFIGURATION - SYSTÈME D'ACTUALITÉS MTC
+========================================
+
+PROBLÈME DÉTECTÉ : Variables d'environnement manquantes
+Les informations de connexion à la base de données ne sont pas configurées.
+
+SOLUTION EN 4 ÉTAPES :
+========================================
+
+ÉTAPE 1 : CONFIGURER LE FICHIER .env.local
+------------------------------------------
+1. Ouvrez le fichier ".env.local" à la racine du projet
+2. Remplacez ces valeurs avec vos vraies informations MySQL :
+
+   DB_HOST=localhost
+   DB_USER=votre_utilisateur_mysql        # Par exemple: root
+   DB_PASSWORD=votre_mot_de_passe         # Votre mot de passe MySQL
+   DB_NAME=mtc_db                         # Nom de votre base de données
+   DB_PORT=3306
+   ADMIN_SECRET_KEY=mtc_secret_2024
+
+3. Sauvegardez le fichier
+
+
+ÉTAPE 2 : CRÉER LA BASE DE DONNÉES
+------------------------------------------
+Option A - Via ligne de commande MySQL :
+   mysql -u root -p
+   CREATE DATABASE mtc_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+   USE mtc_db;
+   source database/schema.sql
+   exit
+
+Option B - Via phpMyAdmin ou autre outil :
+   1. Créez une base de données nommée "mtc_db"
+   2. Importez le fichier "database/schema.sql"
+
+
+ÉTAPE 3 : VÉRIFIER LES INFORMATIONS
+------------------------------------------
+Assurez-vous que :
+✓ MySQL est en cours d'exécution
+✓ Le nom d'utilisateur et le mot de passe sont corrects
+✓ La base de données existe
+✓ Le fichier .env.local est bien à la racine du projet
+
+
+ÉTAPE 4 : REDÉMARRER LE SERVEUR
+------------------------------------------
+1. Arrêtez le serveur Next.js (Ctrl+C dans le terminal)
+2. Relancez : npm run dev
+3. Testez : http://localhost:3000/actualites
+
+
+VÉRIFICATION RAPIDE DE LA CONNEXION MYSQL :
+------------------------------------------
+Pour tester votre connexion MySQL :
+   mysql -u votre_utilisateur -p
+
+Si cela fonctionne, vos credentials sont bons.
+
+
+AIDE SUPPLÉMENTAIRE :
+------------------------------------------
+- Guide complet : QUICKSTART_BLOG.md
+- Documentation : BLOG_SETUP.md
+- Schéma SQL : database/schema.sql
+
+========================================
+

@@ -320,6 +320,7 @@ const MENU: MenuItem[] = [
           { label: "Vision & Mission", href: "/qui-sommes-nous/lentreprise/vision-mission" },
           { label: "Organigramme", href: "/qui-sommes-nous/lentreprise/organigramme" },
           { label: "Moyens Matériels", href: "/qui-sommes-nous/lentreprise/moyens-materiels" },
+          { label: "Qualifications", href: "/qui-sommes-nous/lentreprise/qualifications" },
         ],
       },
       {
@@ -347,6 +348,10 @@ const MENU: MenuItem[] = [
       { label: "Project encours", href: "/projets-realisations/projets-encours" },
       { label: "Project Realise", href: "/projets-realisations/projets-realises" },
     ],
+  },
+  {
+    label: "Actualités",
+    href: "/actualites",
   },
 ];
 

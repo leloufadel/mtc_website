@@ -35,8 +35,10 @@ const MOYENS: EquipmentItem[] = [
       "Notre flotte intègre plus de 80 camions, comprenant des bennes, semi-remorques, citernes à eau et à gasoil et camions grues. Cette logistique robuste nous permet de gérer efficacement le transport des matériaux et l'approvisionnement continu des chantiers, même en zones difficiles d'accès.",
     images: ["/images/moyens/image3.0.jpg", "/images/moyens/SEMI-BENNE-MAN-300x225.jpg"],
   },
-  {title: "Équipements complémentaires",
-    description:"Nous disposons également d’un large éventail de véhicules légers (+30 véhicules), plus de 25 groupes électrogènes, plus de 11 compresseurs et matériels de soutien, garantissant une autonomie totale sur le terrain et la continuité de nos activités sans interruption.",
+  {
+    title: "Véhicules légers",
+    description:
+      "Notre parc de véhicules légers comprend plus de 30 véhicules utilitaires, 4x4 et berlines, assurant la mobilité de nos équipes techniques, le transport rapide des experts sur les chantiers et la réactivité opérationnelle. Ces véhicules garantissent une présence effective et un suivi rapproché de tous nos projets.",
     images: ["/images/moyens/imagecom.jpg"],
   },
 ];
@@ -45,7 +47,7 @@ const KEY_FIGURES: KeyFigure[] = [
   { number: "6", label: "Installations Fixes", icon: "🏭" },
   { number: "100+", label: "Engins de Chantier", icon: "🚜" },
   { number: "80+", label: "Camions", icon: "🚛" },
-  { number: "24/7", label: "Service Continu", icon: "⚡" },
+  { number: "30+", label: "Véhicules Légers", icon: "🚗" },
 ];
 
 function ImageCarousel({ images }: { images: string[] }) {
@@ -178,10 +180,11 @@ function EquipmentCard({ item, index }: { item: EquipmentItem; index: number }) 
 
 export default function MoyensMaterielsPage() {
     const titleHero = "Moyens Matériels";
+    const imageHero = "/images/mtc/home/image2025-10-01.1.jpeg";
 
     return (
         <main className="min-h-screen w-full bg-white overflow-hidden">
-            <Hero titleHero={titleHero} />
+            <Hero titleHero={titleHero} imageHero={imageHero} />
 
       {/* Introduction Section */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">

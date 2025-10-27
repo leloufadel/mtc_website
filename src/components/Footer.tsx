@@ -117,12 +117,14 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-white mb-4">Filiale de</h4>
             <div className="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300 group">
               <div className="relative w-full h-20">
-                <Image
-                  src="/images/wefaholding.png"
-                  alt="Wefa Holding"
-                  fill
-                  className="object-contain group-hover:scale-105 transition-transform duration-300"
-                />
+                <Link href="https://www.wafaholding.mr/" target="_blank">
+                  <Image
+                    src="/images/wefaholding.png"
+                    alt="Wefa Holding"
+                    fill
+                    className="object-contain group-hover:scale-105 transition-transform duration-300"
+                  />
+                </Link>
               </div>
             </div>
             <p className="text-xs text-gray-500 mt-2 text-center">
@@ -138,6 +140,7 @@ export default function Footer() {
           <h4 className="text-xl font-semibold text-white mb-6 text-center">Autres sociétés du groupe</h4>
           <div className="max-w-4xl mx-auto bg-gray-800/50 rounded-lg p-6 hover:bg-gray-800/70 transition-all duration-300">
             <div className="relative w-full">
+              <Link href="https://www.wafaholding.mr/" target="_blank">
               <Image
                 src="/images/companies.png"
                 alt="Sociétés du groupe"
@@ -145,6 +148,7 @@ export default function Footer() {
                 height={3000}
                 className="object-contain rounded"
               />
+              </Link>
             </div>
           </div>
         </div>

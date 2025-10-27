@@ -1,8 +1,10 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 const tw = (...c: (string | false | undefined)[]) => c.filter(Boolean).join(" ");
-
+import { useRouter } from "next/navigation";
 export default function ConstructionRoutiere() {
+    const router = useRouter();
     const routes = [
         {
           title: "Routes Interurbaines",
@@ -197,7 +199,8 @@ export default function ConstructionRoutiere() {
             <button
               type="button"
                         className="group/btn w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#F26418] to-[#d95712] px-8 py-4 text-white font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#F26418] focus:ring-offset-2"
-                      >
+                     onClick={() => router.push("/projets-realisations/projets-realises")}
+                     >
                         <span>Voir Plus de Détails</span>
                         <svg 
                           className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1" 
@@ -328,7 +331,7 @@ export default function ConstructionRoutiere() {
                   </Link>
                   
                   <Link
-                    href="/projets-realisations"
+                    href="/projets-realisations/projets-realises"
                     className="inline-flex items-center justify-center gap-2 rounded-xl bg-white border-2 border-gray-300 px-8 py-4 text-gray-800 font-semibold shadow-md transition-all duration-300 hover:border-[#F26418] hover:text-[#F26418] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-300"
                   >
                     <span>Voir nos Projets</span>

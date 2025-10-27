@@ -1,4 +1,7 @@
+"use client";
+
 import Hero from "@/components/hero";
+import Link from "next/link";
 import { 
   Droplets, 
   Waves, 
@@ -10,11 +13,12 @@ import {
 
 export default function PerimetresIrriguesPage() {
   const titleHero = "Périmètres irrigués et axes hydrauliques";
+  const imageHero = "/images/mtc/hydraulique-scaled.jpg";
   
   return (
     <main className="min-h-screen w-full bg-white overflow-hidden">
       {/* HERO SECTION */}
-      <Hero titleHero={titleHero} />
+      <Hero titleHero={titleHero} imageHero={imageHero} />
 
       {/* INTRODUCTION SECTION */}
       <section className="py-20 md:py-28 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
@@ -206,10 +210,12 @@ export default function PerimetresIrriguesPage() {
                   </p>
 
                   {/* CTA Button */}
-                  <button className="group/btn inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#F26418] to-[#F26418]/80 text-white font-semibold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300">
-                    <span>Voir Plus</span>
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                  </button>
+                  <Link href="/projets-realisations/projets-realises">
+                    <button className="group/btn inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#F26418] to-[#F26418]/80 text-white font-semibold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300">
+                      <span>Voir Plus</span>
+                      <ArrowRight className="ml-2 w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -235,10 +241,12 @@ export default function PerimetresIrriguesPage() {
                   </p>
 
                   {/* CTA Button */}
-                  <button className="group/btn inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#F26418] to-[#F26418]/80 text-white font-semibold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300">
-                    <span>Voir Plus</span>
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                  </button>
+                  <Link href="/projets-realisations/projets-realises">
+                    <button className="group/btn inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#F26418] to-[#F26418]/80 text-white font-semibold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300">
+                      <span>Voir Plus</span>
+                      <ArrowRight className="ml-2 w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

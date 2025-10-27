@@ -61,7 +61,7 @@ export default function Hero1() {
   }, []);
 
   return (
-    <section className="relative h-screen min-h-[700px] lg:min-h-[1000px] overflow-hidden bg-slate-900">
+    <section className="relative h-screen min-h-[600px] md:min-h-[700px] lg:min-h-[900px] xl:min-h-[1000px] overflow-hidden bg-slate-900">
       {/* Background Images with Transitions */}
       <div className="absolute inset-0">
         {heroImages.map((image, index) => (
@@ -100,7 +100,7 @@ export default function Hero1() {
 
       {/* Content */}
       <div className="relative z-20 h-full flex items-center">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
           <div className="max-w-5xl">
             {/* Main content with staggered animations */}
             <div className={`transition-all duration-1000 ${
@@ -115,7 +115,7 @@ export default function Hero1() {
               </div>
 
               {/* Main headline */}
-              <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 lg:mb-6 leading-[1.15] tracking-tight transition-all duration-1000 delay-100 ${
+              <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 md:mb-4 lg:mb-6 leading-[1.15] tracking-tight transition-all duration-1000 delay-100 ${
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}>
                 <span className="block text-white drop-shadow-2xl">
@@ -133,76 +133,76 @@ export default function Hero1() {
               </h1>
               
               {/* Description */}
-              <p className={`text-sm sm:text-base lg:text-lg text-gray-200 leading-relaxed mb-6 lg:mb-8 max-w-3xl transition-all duration-1000 delay-200 ${
+              <p className={`text-xs sm:text-sm md:text-base lg:text-lg text-gray-200 leading-relaxed mb-4 md:mb-6 lg:mb-8 max-w-3xl transition-all duration-1000 delay-200 ${
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}>
                 Chez <span className="font-semibold text-white">Mauritanienne des Travaux et Constructions (MTC)</span>, nous nous engageons à transformer durablement les infrastructures en Mauritanie. Grâce à notre expertise et à notre engagement envers l'excellence, nous réalisons des projets qui améliorent la qualité de vie et favorisent le développement du pays.
               </p>
 
               {/* Stats Section - MTC en chiffres clés */}
-              <div className={`mt-8 lg:mt-12 transition-all duration-1000 delay-300 ${
+              <div className={`mt-6 md:mt-8 lg:mt-12 transition-all duration-1000 delay-300 ${
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}>
                 {/* Section Title */}
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-6 lg:mb-8 flex items-center gap-3">
-                  <span className="h-1 w-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full"></span>
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 md:mb-6 lg:mb-8 flex items-center gap-2 md:gap-3">
+                  <span className="h-1 w-6 md:w-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full"></span>
                   MTC en chiffres clés
                 </h2>
                 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 max-w-5xl">
-                  <div className="backdrop-blur-lg bg-gradient-to-br from-white/20 to-white/5 rounded-xl p-5 lg:p-6 border-2 border-white/30 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400/60 hover:bg-white/25 transition-all duration-300 group flex flex-col items-center justify-center text-center">
-                    <div className="flex items-baseline justify-center gap-1 mb-3">
-                      <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#FF6310] group-hover:text-orange-300 transition-colors">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6 max-w-5xl">
+                  <div className="backdrop-blur-lg bg-gradient-to-br from-white/20 to-white/5 rounded-lg md:rounded-xl p-4 md:p-5 lg:p-6 border-2 border-white/30 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400/60 hover:bg-white/25 transition-all duration-300 group flex flex-col items-center justify-center text-center">
+                    <div className="flex items-baseline justify-center gap-1 mb-2 md:mb-3">
+                      <span className="text-xl md:text-2xl lg:text-4xl font-black text-[#FF6310] group-hover:text-orange-300 transition-colors">
                         +
                       </span>
-                      <span className="text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-br from-orange-400 to-orange-500 bg-clip-text text-[#FF6310] group-hover:from-orange-300 group-hover:to-orange-400 transition-all">
+                      <span className="text-2xl md:text-3xl lg:text-5xl font-black bg-gradient-to-br from-orange-400 to-orange-500 bg-clip-text text-[#FF6310] group-hover:from-orange-300 group-hover:to-orange-400 transition-all">
                         15
                       </span>
                     </div>
-                    <div className="text-xs sm:text-sm text-gray-200 font-semibold uppercase tracking-wide">
+                    <div className="text-[10px] sm:text-xs md:text-sm text-gray-200 font-semibold uppercase tracking-wide">
                       Ans d'expérience
                     </div>
                   </div>
 
-                  <div className="backdrop-blur-lg bg-gradient-to-br from-white/20 to-white/5 rounded-xl p-5 lg:p-6 border-2 border-white/30 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400/60 hover:bg-white/25 transition-all duration-300 group flex flex-col items-center justify-center text-center">
-                    <div className="flex items-baseline justify-center gap-1 mb-3">
-                      <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#FF6310] group-hover:text-orange-300 transition-colors">
+                  <div className="backdrop-blur-lg bg-gradient-to-br from-white/20 to-white/5 rounded-lg md:rounded-xl p-4 md:p-5 lg:p-6 border-2 border-white/30 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400/60 hover:bg-white/25 transition-all duration-300 group flex flex-col items-center justify-center text-center">
+                    <div className="flex items-baseline justify-center gap-1 mb-2 md:mb-3">
+                      <span className="text-xl md:text-2xl lg:text-4xl font-black text-[#FF6310] group-hover:text-orange-300 transition-colors">
                         +
                       </span>
-                      <span className="text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-br from-orange-400 to-orange-500 bg-clip-text text-[#FF6310] group-hover:from-orange-300 group-hover:to-orange-400 transition-all">
+                      <span className="text-2xl md:text-3xl lg:text-5xl font-black bg-gradient-to-br from-orange-400 to-orange-500 bg-clip-text text-[#FF6310] group-hover:from-orange-300 group-hover:to-orange-400 transition-all">
                         708
                       </span>
                     </div>
-                    <div className="text-xs sm:text-sm text-gray-200 font-semibold uppercase tracking-wide">
+                    <div className="text-[10px] sm:text-xs md:text-sm text-gray-200 font-semibold uppercase tracking-wide">
                       Km de Route
                     </div>
                   </div>
 
-                  <div className="backdrop-blur-lg bg-gradient-to-br from-white/20 to-white/5 rounded-xl p-5 lg:p-6 border-2 border-white/30 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400/60 hover:bg-white/25 transition-all duration-300 group flex flex-col items-center justify-center text-center">
-                    <div className="flex items-baseline justify-center gap-1 mb-3">
-                      <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#FF6310] group-hover:text-orange-300 transition-colors">
+                  <div className="backdrop-blur-lg bg-gradient-to-br from-white/20 to-white/5 rounded-lg md:rounded-xl p-4 md:p-5 lg:p-6 border-2 border-white/30 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400/60 hover:bg-white/25 transition-all duration-300 group flex flex-col items-center justify-center text-center">
+                    <div className="flex items-baseline justify-center gap-1 mb-2 md:mb-3">
+                      <span className="text-xl md:text-2xl lg:text-4xl font-black text-[#FF6310] group-hover:text-orange-300 transition-colors">
                         +
                       </span>
-                      <span className="text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-br from-orange-400 to-orange-500 bg-clip-text text-[#FF6310] group-hover:from-orange-300 group-hover:to-orange-400 transition-all">
+                      <span className="text-2xl md:text-3xl lg:text-5xl font-black bg-gradient-to-br from-orange-400 to-orange-500 bg-clip-text text-[#FF6310] group-hover:from-orange-300 group-hover:to-orange-400 transition-all">
                         250
                       </span>
                     </div>
-                    <div className="text-xs sm:text-sm text-gray-200 font-semibold uppercase tracking-wide">
+                    <div className="text-[10px] sm:text-xs md:text-sm text-gray-200 font-semibold uppercase tracking-wide">
                       Unités et équipements
                     </div>
                   </div>
 
-                  <div className="backdrop-blur-lg bg-gradient-to-br from-white/20 to-white/5 rounded-xl p-5 lg:p-6 border-2 border-white/30 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400/60 hover:bg-white/25 transition-all duration-300 group flex flex-col items-center justify-center text-center">
-                    <div className="flex items-baseline justify-center gap-1 mb-3">
-                      <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#FF6310] group-hover:text-orange-300 transition-colors">
+                  <div className="backdrop-blur-lg bg-gradient-to-br from-white/20 to-white/5 rounded-lg md:rounded-xl p-4 md:p-5 lg:p-6 border-2 border-white/30 shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-orange-400/60 hover:bg-white/25 transition-all duration-300 group flex flex-col items-center justify-center text-center">
+                    <div className="flex items-baseline justify-center gap-1 mb-2 md:mb-3">
+                      <span className="text-xl md:text-2xl lg:text-4xl font-black text-[#FF6310] group-hover:text-orange-300 transition-colors">
                         +
                       </span>
-                      <span className="text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-br from-orange-400 to-orange-500 bg-clip-text text-[#FF6310] group-hover:from-orange-300 group-hover:to-orange-400 transition-all">
+                      <span className="text-2xl md:text-3xl lg:text-5xl font-black bg-gradient-to-br from-orange-400 to-orange-500 bg-clip-text text-[#FF6310] group-hover:from-orange-300 group-hover:to-orange-400 transition-all">
                         50
                       </span>
                     </div>
-                    <div className="text-xs sm:text-sm text-gray-200 font-semibold uppercase tracking-wide">
+                    <div className="text-[10px] sm:text-xs md:text-sm text-gray-200 font-semibold uppercase tracking-wide">
                       Ingénieurs cadres
                     </div>
                   </div>

@@ -58,8 +58,8 @@ function InterventionCard({
       </div>
 
       {/* Content Section */}
-      <div className="p-6 sm:p-8">
-        <h3 className="text-xl sm:text-2xl font-bold mb-4 text-foreground group-hover:text-orange-600 transition-colors duration-300">
+      <div className="p-5 md:p-6 sm:p-8">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 md:mb-4 text-foreground group-hover:text-orange-600 transition-colors duration-300">
           {title}
         </h3>
         <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
@@ -82,19 +82,19 @@ export default function Home() {
       {/* Flip Book with Quality Service Card */}
 
       {/* Intervention Domains Section */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-slate-50 to-orange-50/30 dark:from-slate-950 dark:to-orange-950/20">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-32 bg-gradient-to-br from-slate-50 to-orange-50/30 dark:from-slate-950 dark:to-orange-950/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-foreground">
               Nos Domaines d'Intervention
             </h2>
-            <div className="h-1 w-24 bg-gradient-to-r from-orange-500 to-orange-700 mx-auto mb-6 rounded-full" />
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <div className="h-1 w-20 md:w-24 bg-gradient-to-r from-orange-500 to-orange-700 mx-auto mb-4 md:mb-6 rounded-full" />
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-2 md:px-0">
               Notre priorité est d'offrir des solutions adaptées aux besoins spécifiques de chaque projet. Grâce à des technologies modernes et une organisation rigoureuse, nous garantissons une exécution efficace et conforme aux normes les plus élevées.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 max-w-7xl mx-auto">
             <InterventionCard
               title="Construction Routière"
               description="Grâce à notre certification nationale de qualification ROUTE3, le plus haut niveau dans ce domaine, nous garantissons des réalisations durables et conformes aux standards les plus exigeants."

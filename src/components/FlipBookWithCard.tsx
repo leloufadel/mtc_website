@@ -119,7 +119,7 @@ export default function FlipBookWithCard({ className = "" }: FlipBookWithCardPro
 
   return (
 <section
-  className={`relative w-full min-h-screen lg:h-auto flex items-center justify-center overflow-hidden ${className}`}
+  className={`relative w-full min-h-[600px] md:min-h-[700px] lg:h-auto flex items-center justify-center overflow-hidden ${className}`}
 >    {/* Background Image */}
       <Image
         src={backgroundSrc}
@@ -130,14 +130,14 @@ export default function FlipBookWithCard({ className = "" }: FlipBookWithCardPro
       />
       
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-8 md:py-12 lg:py-16">
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-6 sm:py-8 md:py-12 lg:py-16">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-4 md:gap-6 lg:gap-8 xl:gap-12 items-center">
           
           {/* Flip Book Section */}
-          <div className="xl:col-span-7 flex flex-col items-center justify-center py-8" ref={containerRef}>
+          <div className="xl:col-span-7 flex flex-col items-center justify-center py-4 md:py-6 lg:py-8" ref={containerRef}>
             
             {/* Download Button - Above the book */}
-            <div className="mb-4 md:mb-6 lg:mb-8">
+            <div className="mb-3 md:mb-4 lg:mb-6 xl:mb-8">
               <button
                 onClick={downloadPDF}
                 disabled={isDownloading}
@@ -161,11 +161,11 @@ export default function FlipBookWithCard({ className = "" }: FlipBookWithCardPro
 
             {/* Book Container with 3D Perspective */}
             <div
-              className="relative w-full max-w-[280px] sm:max-w-md md:max-w-lg lg:max-w-2xl xl:max-w-3xl mx-auto"
+              className="relative w-full max-w-[240px] sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl mx-auto"
               style={{ 
                 perspective: '2500px',
                 perspectiveOrigin: 'center center',
-                height: 'clamp(350px, 50vw, 600px)',
+                height: 'clamp(300px, 40vw, 550px)',
               }}
               aria-label="Flipbook MTC"
             >
@@ -351,13 +351,13 @@ export default function FlipBookWithCard({ className = "" }: FlipBookWithCardPro
           </div>
 
           {/* Quality Service Card */}
-          <div className="xl:col-span-5 flex items-center justify-center xl:justify-start pb-8 xl:pb-0">
-            <div className="bg-white/95 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 md:p-8 lg:p-10 shadow-2xl max-w-lg w-full border border-orange-200/30 ring-1 ring-orange-100/50">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-gray-900 to-[#F26418] bg-clip-text text-transparent mb-4 md:mb-6 text-center xl:text-left">
+          <div className="xl:col-span-5 flex items-center justify-center xl:justify-start pb-4 md:pb-6 lg:pb-8 xl:pb-0">
+            <div className="bg-white/95 backdrop-blur-sm rounded-lg md:rounded-xl lg:rounded-2xl p-4 md:p-6 lg:p-8 xl:p-10 shadow-2xl max-w-lg w-full border border-orange-200/30 ring-1 ring-orange-100/50">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-gray-900 to-[#F26418] bg-clip-text text-transparent mb-3 md:mb-4 lg:mb-6 text-center xl:text-left">
                 Qualité de service inégalée
               </h2>
               
-              <div className="space-y-3 md:space-y-4 text-gray-700 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
+              <div className="space-y-2 md:space-y-3 lg:space-y-4 text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed mb-4 md:mb-6 lg:mb-8">
                 <p>
                   Chez MTC, l&apos;engagement envers la qualité est primordial. Chaque projet est une nouvelle 
                   opportunité d&apos;atteindre l&apos;excellence et de dépasser les attentes de nos clients. Nous 
@@ -374,8 +374,8 @@ export default function FlipBookWithCard({ className = "" }: FlipBookWithCardPro
 
               {/* CTA Button */}
               <div className="text-center xl:text-left">
-                <button className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-[#F26418] to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-6 md:px-8 py-3 md:py-4 text-sm md:text-base rounded-lg md:rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105">
-                  <Phone className="size-4 md:size-5" />
+                <button className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-[#F26418] to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-4 md:px-6 lg:px-8 py-2.5 md:py-3 lg:py-4 text-xs sm:text-sm md:text-base rounded-lg md:rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105">
+                  <Phone className="size-3 md:size-4 lg:size-5" />
                   Contactez-nous
                 </button>
               

@@ -400,17 +400,17 @@ export default function Nav() {
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="transition-opacity hover:opacity-80">
-            <Image src="/mtc-logo.webp" alt="MTC Logo" width={100} height={100} className="h-20 w-auto" />
+            <Image src="/mtc-logo.webp" alt="MTC Logo" width={100} height={100} className="h-16 md:h-16 lg:h-20 w-auto" />
           </Link>
 
           {/* Desktop */}
-          <nav ref={navRef} className="hidden md:flex items-center gap-8">
+          <nav ref={navRef} className="hidden md:flex items-center gap-3 lg:gap-6">
             {MENU.map((top, idx) => (
               <div key={top.label} className="relative">
                 {top.children ? (
                   <>
                     <button
-                      className={`inline-flex items-center gap-2 px-2 py-1 rounded-md  transition-colors ${
+                      className={`inline-flex items-center gap-1.5 lg:gap-2 px-1.5 lg:px-2 py-1 rounded-md transition-colors ${
                         scrolled ? 'text-gray-900 hover:text-orange-600' : 'text-white hover:text-orange-300'
                       }`}
                       onMouseEnter={() => setOpenTop(idx)}
@@ -418,14 +418,14 @@ export default function Nav() {
                       onClick={() => setOpenTop(openTop === idx ? null : idx)}
                       aria-expanded={openTop === idx}
                     >
-                      <span className="font-medium">{top.label}</span>
-                      <ChevronDown scrolled={scrolled} />
+                      <span className="font-medium text-xs lg:text-sm whitespace-nowrap">{top.label}</span>
+                      <ChevronDown scrolled={scrolled} size={scrolled ? 12 : 14} />
                     </button>
 
                     {/* Small primary panel */}
                     {openTop === idx && (
                       <div
-                        className="absolute left-0 mt-2 w-[260px] rounded-lg border border-gray-200 bg-white text-gray-900 shadow-xl"
+                        className="absolute left-0 mt-2 w-[240px] lg:w-[280px] rounded-lg border border-gray-200 bg-white text-gray-900 shadow-xl z-50"
                         onMouseLeave={() => { setOpenTop(null); setActiveParent(null); }}
                       >
                         <ul className="py-2">
@@ -441,7 +441,7 @@ export default function Nav() {
                                     className="flex w-full items-center justify-between rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-orange-500 hover:text-white transition-colors"
                                   >
                                     {item.label}
-                                    <ChevronRight />
+                                    <ChevronRight size={12} />
                                   </button>
                                 ) : (
                                   <Link
@@ -456,11 +456,11 @@ export default function Nav() {
                           })}
                         </ul>
 
-                        {/* Secondary small panel for children (appears to the right) */}
+                        {/* Secondary small panel for children (appears to the right or repositioned for md) */}
                         {activeParent &&
                           top.children.find((c) => c.label === activeParent)?.children && (
                             <div
-                              className="absolute top-0 left-[260px] w-[260px] rounded-lg border border-gray-200 bg-white text-gray-900 shadow-xl"
+                              className="absolute top-0 lg:left-[260px] left-[240px] w-[240px] lg:w-[280px] rounded-lg border border-gray-200 bg-white text-gray-900 shadow-xl z-50 ml-2 lg:ml-0 mt-0 lg:mt-0"
                               onMouseLeave={() => setActiveParent(null)}
                             >
                               <ul className="py-2">
@@ -485,7 +485,7 @@ export default function Nav() {
                 ) : (
                   <Link 
                     href={top.href || "#"} 
-                    className={`px-2 py-1 rounded-md font-medium transition-colors ${
+                    className={`px-1.5 lg:px-2 py-1 rounded-md font-medium transition-colors whitespace-nowrap text-xs lg:text-sm ${
                       scrolled ? 'text-gray-900 hover:text-orange-600' : 'text-white hover:text-orange-300'
                     }`}
                   >
@@ -497,7 +497,7 @@ export default function Nav() {
 
             <Link
               href="/contact"
-              className="rounded-full px-4 py-2 text-sm font-medium transition-colors"
+              className="rounded-full px-3 lg:px-4 py-2 text-xs lg:text-sm font-medium transition-colors whitespace-nowrap"
               style={{ background: BRAND }}
               onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.9")}
               onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
@@ -523,9 +523,10 @@ export default function Nav() {
            style={{ background: "#6A7377", maxHeight: mobileOpen ? "92vh" : "0px" }}>
         <div className="px-5 pb-6 pt-3">
           {MENU.map((item) => (
-            <MobileSection key={item.label} item={item} />
+            <MobileSection key={item.label} item={item} onClose={() => setMobileOpen(false)} />
           ))}
           <Link href="/contact"
+                onClick={() => setMobileOpen(false)}
                 className="mt-4 inline-flex w-full items-center justify-center rounded-lg px-4 py-2 font-medium text-white"
                 style={{ background: BRAND }}>
             Contactez-Nous
@@ -538,7 +539,7 @@ export default function Nav() {
 
 /* ----------------- Mobile sections ----------------- */
 
-function MobileSection({ item }: { item: MenuItem }) {
+function MobileSection({ item, onClose }: { item: MenuItem; onClose: () => void }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="border-b border-white/20 py-3">
@@ -556,11 +557,12 @@ function MobileSection({ item }: { item: MenuItem }) {
             <div className="pl-3 pt-2">
               {item.children.map((c) =>
                 c.children?.length ? (
-                  <MobileSubSection key={c.label} parent={c} />
+                  <MobileSubSection key={c.label} parent={c} onClose={onClose} />
                 ) : (
                   <Link
                     key={c.label}
                     href={c.href || "#"}
+                    onClick={onClose}
                     className="block rounded-md px-2 py-2 text-sm text-white hover:bg-orange-500 transition-colors"
                   >
                     {c.label}
@@ -571,7 +573,7 @@ function MobileSection({ item }: { item: MenuItem }) {
           </div>
         </>
       ) : (
-        <Link href={item.href || "#"} className="block py-1 text-white">
+        <Link href={item.href || "#"} onClick={onClose} className="block py-1 text-white">
           {item.label}
         </Link>
       )}
@@ -579,7 +581,7 @@ function MobileSection({ item }: { item: MenuItem }) {
   );
 }
 
-function MobileSubSection({ parent }: { parent: MenuItem }) {
+function MobileSubSection({ parent, onClose }: { parent: MenuItem; onClose: () => void }) {
   const [open, setOpen] = useState(true); // open by default
   return (
     <div className="mb-2">
@@ -597,6 +599,7 @@ function MobileSubSection({ parent }: { parent: MenuItem }) {
             <Link
               key={gc.label}
               href={gc.href || "#"}
+              onClick={onClose}
               className="block rounded-md px-2 py-2 text-sm text-white hover:bg-orange-500 transition-colors"
             >
               {gc.label}

@@ -34,9 +34,11 @@ type ProjectItem = {
 
 export default function ProjetsEnCoursPage() {
     const titleHero = "Projets en cours";
+    const imageHero = ["/images/mtc/new/20180610_142523-scaled.jpg", "/images/mtc/home/image2025-10-01.24.jpeg" ,"/images/bassins/Mj.jpg"];
+
     return (
         <main className="min-h-screen w-full bg-white overflow-hidden">
-            <Hero titleHero={titleHero} />
+            <Hero titleHero={titleHero} imageHero={imageHero} />
         {/* here goes the content */}
         <section className="bg-gradient-to-b from-[#E9DFDE] to-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:py-20 lg:py-24">

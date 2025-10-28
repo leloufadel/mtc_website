@@ -60,11 +60,15 @@ const CERTIFICATIONS: CertificationDetail[] = [
 
 export default function QualificationsPage() {
   const titleHero = "Qualifications";
-
+  const imageHero = ["/images/mtc/new/IMG_20170828_103122-2048x1536.jpg",
+    "/images/mtc/home/image2025-10-01.26.jpeg", "/images/mtc/home/image2025-10-01.22.jpeg", "/images/mtc/image3-scaled.jpg",
+    "/images/mtc/new/IMG_20170828_103122-2048x1536.jpg",
+    "/images/mtc/new/20190305_095110-scaled.jpg",
+  ];
   return (
     <main className="min-h-screen w-full bg-white overflow-hidden">
       {/* HERO SECTION */}
-      <Hero titleHero={titleHero} />
+      <Hero titleHero={titleHero} imageHero={imageHero} />
 
       {/* INTRODUCTION SECTION */}
       <section className="py-20 md:py-28 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">

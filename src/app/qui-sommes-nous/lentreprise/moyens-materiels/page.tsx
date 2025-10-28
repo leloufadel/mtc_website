@@ -180,7 +180,11 @@ function EquipmentCard({ item, index }: { item: EquipmentItem; index: number }) 
 
 export default function MoyensMaterielsPage() {
     const titleHero = "Moyens Matériels";
-    const imageHero = "/images/mtc/home/image2025-10-01.1.jpeg";
+    const imageHero = ["/images/mtc/home/image2025-10-01.26.jpeg", "/images/mtc/home/image2025-10-01.21.jpeg", "/images/mtc/home/image2025-10-01.22.jpeg", "/images/mtc/image3-scaled.jpg",
+      "/images/mtc/new/IMG_20170828_103122-2048x1536.jpg",
+      "/images/mtc/new/20190305_095110-scaled.jpg",
+      "/images/mtc/new/crushing-plant-stationary-768x576.jpg",
+    ];
 
     return (
         <main className="min-h-screen w-full bg-white overflow-hidden">

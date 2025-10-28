@@ -1,4 +1,5 @@
 "use client";
+import Hero from "@/components/hero";
 import Image from "next/image";
 import Link from "next/link";
 const tw = (...c: (string | false | undefined)[]) => c.filter(Boolean).join(" ");
@@ -63,22 +64,12 @@ export default function ConstructionRoutiere() {
         { src: "/images/constructions/rubon9.jpg", alt: "Chantier 9" },
       ];
 
+    const titleHero = "Construction Routiere";
+    const imageHero = ["/images/mtc/home/image2025-10-01.23.jpeg", "/images/mtc/home/image2025-10-01.24.jpeg" ,"/images/mtc/image3-scaled.jpg"];
     return (
         <main className="min-h-screen w-full bg-white">
       {/* Hero Section  */}
-      <section className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden">
-        <Image src="/images/rubon1.jpg" alt="Construction Routiere" fill priority className="object-cover" />
-      <div className="absoluteinset-0 bg-gradient-to-b 
-      from-black/50 via-black/30 to-black/70" />
-      {/* Hero Content */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
-            Construction Routiere
-          </h1>
-        </div>
-      </div>
-      </section>
+ <Hero titleHero={titleHero} imageHero={imageHero} /> 
 
       <section className="relative py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

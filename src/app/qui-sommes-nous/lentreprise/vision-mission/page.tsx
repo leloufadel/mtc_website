@@ -1,11 +1,16 @@
 import Hero from "@/components/hero";
 export default function VisionMissionPage() {
   const titleHero = "Vision & Mission";
+  const imageHero = ["/images/mtc/home/image2025-10-01.20.jpeg", 
+    "/images/mtc/new/IMG_20170828_103122-2048x1536.jpg",
+    "/images/mtc/image3-scaled.jpg", "/images/mtc/new/20190305_095110-scaled.jpg",
+
+  ]
+ 
   return (
     <main className="min-h-screen w-full bg-white overflow-hidden">
       {/* HERO SECTION */}
-      <Hero titleHero={titleHero} />
-
+      <Hero titleHero={titleHero} imageHero={imageHero} />
       {/* VISION SECTION */}
       <section className="py-20 md:py-28 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
         {/* Background decorative elements */}

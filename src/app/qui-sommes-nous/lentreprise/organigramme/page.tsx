@@ -3,11 +3,11 @@ import Image from "next/image";
 
 export default function OrganigrammePage() {
   const titleHero = "L'organigramme";
-  
+  const imageHero = ["/images/mtc/home/image2025-10-01.21.jpeg", "/images/mtc/home/image2025-10-01.22.jpeg", "/images/bassins/Mj.jpg"];
   return (
     <main className="min-h-screen w-full bg-white overflow-hidden">
       {/* HERO SECTION */}
-      <Hero titleHero={titleHero} imageHero="/images/mtc/home/image2025-10-01.1.jpeg" />
+      <Hero titleHero={titleHero} imageHero={imageHero} />
 
       {/* ORGANIZATIONAL CHART IMAGE SECTION */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">

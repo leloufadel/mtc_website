@@ -1,10 +1,39 @@
-import Image from "next/image"; 
+"use client";
 
- export default function Hero({titleHero, imageHero}: {titleHero: string, imageHero: string}){
+import Image from "next/image"; 
+import { useState, useEffect } from "react";
+
+export default function Hero({titleHero, imageHero}: {titleHero: string, imageHero: string | string[]}){
+  // Normalize to array
+  const images = Array.isArray(imageHero) ? imageHero : [imageHero];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 4000); // Change image every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
  return (
     <section className= "relative h-[60vh] md:h-[70vh] w-full overflow-hidden" >
-   <Image src={imageHero} alt={titleHero} fill priority className="object-cover" />
-   {/* Gradient overlay */}
+      {images.map((image, index) => (
+        <Image 
+          key={index}
+          src={image} 
+          alt={`${titleHero} - Slide ${index + 1}`}
+          fill 
+          priority={index === 0}
+          className={`object-cover transition-opacity duration-1000 ${
+            index === currentIndex ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{ position: 'absolute' }}
+        />
+      ))}
+  {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
         
         {/* Hero Content */}
@@ -16,5 +45,5 @@ import Image from "next/image";
           </div>
         </div>
     </section>
- )
- }
+)
+}

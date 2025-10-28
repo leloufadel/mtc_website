@@ -9,35 +9,15 @@ import {
   Target,
   CheckCircle2
 } from "lucide-react";
-
+import Hero from "@/components/hero";
 export default function Page() {
+  const titleHero = "Nos Valeurs";
+  const imageHero =["/images/mtc/new/20180610_142523-scaled.jpg", "/images/mtc/new/IMG_20170828_103122-2048x1536.jpg" ,"/images/bassins/Mj.jpg"];
   return (
     <main className="min-h-screen w-full bg-white">
       {/* HERO SECTION WITH IMAGE */}
-      <section className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden">
-        <Image
-          src="/images/rubon1.jpg"
-          alt="Nos Valeurs - MTC"
-          fill
-          priority
-          className="object-cover"
-        />
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
-        
-        {/* Hero Content */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="max-w-5xl px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up" data-aos-duration="1000">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
-              Nos Valeurs
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 font-light">
-              Notre ADN
-            </p>
-            <div className="w-24 h-1 bg-[#F26418] mx-auto rounded-full" data-aos="zoom-in" data-aos-delay="500"></div>
-          </div>
-        </div>
-      </section>
+    <Hero titleHero={titleHero} imageHero={imageHero} />
+      
 
       {/* INTRODUCTION SECTION */}
       <section className="relative py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">

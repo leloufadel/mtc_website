@@ -2,10 +2,11 @@ import Hero from "@/components/hero";
 
 export default function PolitiqueRHPage() {
   const titleHero = "Politique RH";
+  const imageHero =["/images/mtc/home/image2025-10-01.23.jpeg", "/images/mtc/home/image2025-10-01.24.jpeg" ,"/images/bassins/Mj.jpg"];
   return (
     <main className="min-h-screen w-full bg-white overflow-hidden">
       {/* HERO SECTION */}
-      <Hero titleHero={titleHero} />
+      <Hero titleHero={titleHero} imageHero={imageHero} />
 
       {/* INTRODUCTION SECTION */}
       <section className="py-20 md:py-28 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">

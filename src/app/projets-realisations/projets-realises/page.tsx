@@ -18,7 +18,7 @@ export default function ProjetsRealisesPage() {
   const routesProjects = [
     {
       id: "route-1",
-      title: "Route Aleg - Magtaa Lehjar",
+      title: "Route Aleg - Magtaa lehjar",
       marche: "Travaux de réhabilitation/construction de certains tronçons du réseau routier national divisé en sept lots, Lot1 Tronçon Aleg – Magtaa Lehjar",
       description: "100 km, reconstruction de la couche de base avec apport de matériaux et recyclage du revêtement existant, imprégnation, accrochage, enrobés, géo-grille, bicouche, signalisation et bordures.",
       distance: "100 km"
@@ -32,7 +32,7 @@ export default function ProjetsRealisesPage() {
     },
     {
       id: "route-3",
-      title: "Voiries Aleg Et Magtaa Lahjar",
+      title: "Voiries Aleg et Magtaa lahjar",
       marche: "Travaux de construction des voiries à l'intérieur du pays, divisé en quatre lots. Lot n°2 : Voiries Aleg et Magtaa Lahjar",
       description: "12,2 km Débroussaillage, décapage, déblais, remblais, fondation, base, revêtement, ouvrages hydrauliques bordures et signalisation.",
       distance: "12,2 km"
@@ -46,161 +46,161 @@ export default function ProjetsRealisesPage() {
     },
     {
       id: "route-5",
-      title: "VOIRIE NOUAKCHOTT 2019",
+      title: "Rehabilitation de la Voirie de Nouakchott 2019",
       marche: "REHABILITATION 27 km DE VOIRIE A NOUAKCHOTT 2019",
       description: "18,28 km,. élargissement (déblai remblai), rehaussement (couche de base), imprégnation, accrochage, enrobés et bordures",
       distance: "18,28 km"
     },
     {
       id: "route-6",
-      title: "VOIRIE DE NOUAKCHOTT 2019",
+      title: "Mise à niveau des axes de la Voirie de Nouakchott 2019",
       marche: "MISE A NIVEAU DE CERTAINS AXES DE LA VOIRIE DE NOUAKCHOTT 2019",
       description: "3 km d'Imprégnation, accrochage, enrobés et pavage.",
       distance: "3 km"
     },
     {
       id: "route-7",
-      title: "ROUTE NEMA – ACHEMIM",
+      title: "Route Nema – Achemim",
       marche: "ROUTE NEMA – ACHEMIM",
       description: "16,4 km, Débroussaillage, décapage, déblais, remblais, fondation, base, revêtement, ouvrages hydrauliques et signalisation.",
       distance: "16,4 km"
     },
     {
       id: "route-8",
-      title: "VOIRIE ET AEROPORT DE NEMA",
+      title: "Voirie et Aeroport de Nema - Convention 008",
       marche: "VOIRIE ET AEROPORT DE NEMA, TRAVAUX COMPLEMENTAIRES",
       description: "50% de la couche de grave bitume d'épaisseur 11 cm sur toute la piste longue de 3 000 ml sur une largeur de 45m.",
       distance: "3 km"
     },
     {
       id: "route-9",
-      title: "VOIRIE ET AEROPORT DE NEMA",
+      title: "Voirie et Aeroport de Nema  - Convention 012",
       marche: "VOIRIE ET AEROPORT DE NEMA",
       description: "50% de : 15 km de voirie, réhabilitation et l'extension de la piste, réhabilitation des bâtiments de l'Aéroport de Néma..",
       distance: "15 km"
     },
     {
       id: "route-10",
-      title: "VOIRIE DE NOUAKCHOTT 2018",
+      title: "Voirie de Nouakchott 2018",
       marche: "VOIRIE DU SOMMET DE L'UNION AFRIQUAINE DE NOUAKCHOTT",
       description: "18,28 km, élargissement (déblai remblai), rehaussement (couche de base), imprégnation, accrochage, enrobés et bordures.",
       distance: "18,28 km"
     },
     {
       id: "route-11",
-      title: "ROUTE ZRAVIA - TAMCHEKETT",
+      title: "Route Zravia - Tamchekett",
       marche: "ROUTE ZRAVIA – TAMCHEKETT",
       description: "45 km, Débroussaillage, décapage, déblais, remblais, fondation, base, revêtement, ouvrages hydrauliques et signalisation",
       distance: "45 km"
     },
     {
       id: "route-12",
-      title: "ROUTE NOUAKCHOTT-BOUTILIMITT",
+      title: "Route Nouakchott-Boutilimitt PK 58 - PK 108",
       marche: "TRAVAUX DE RECONSTRUCTION DE LA ROUTE NOUAKCHOTT-BOUTILIMITT DU PK 58 AU PK 108",
       description: "25 km Débroussaillage, décapage, scarification du revêtement existant, déblais, remblais, fondation, base, revêtement, et signalisation",
       distance: "25 km"
     },
     {
       id: "route-13",
-      title: "AEROPORT D'ATAR",
+      title: "Aeroport d'Atar",
       marche: "AEROPORT D'ATAR",
       description: "piste de 3 000 m x 30 m : Colmatage et traitement des fissures, Décapage du revêtement, Remplissage en BB, Couche d'accrochage, Béton bitumineux de 6 cm d'épaisseur et Marquage horizontal.",
       distance: "3 km"
     },
     {
       id: "route-14",
-      title: "VOIRIE D'AKJOUJT",
+      title: "Voirie d'Akjoujt",
       marche: "TRAVAUX DE CONSTRUCTION DE LA VOIRIE D'AKJOUJT",
       description: "5 km Débroussaillage, décapage, déblais, remblais, fondation, base, revêtement, et signalisation",
       distance: "5 km"
     },
     {
       id: "route-15",
-      title: "ROUTE NOUAKCHOTT-BOUTILIMITT",
+      title: "Route Nouakchott-Boutilimitt PK 10 - PK 60",
       marche: "TRAVAUX DE RECONSTRUCTION DE LA ROUTE NOUAKCHOTT-BOUTILIMITT DU PK 10 AU PK 60",
       description: "25 km Débroussaillage, décapage, déblais, remblais, fondation, base, revêtement, et signalisation",
       distance: "25 km"
     },
     {
       id: "route-16",
-      title: "ROUTE KIFFA BOUMDEID",
+      title: "Route Kiffa Boumdeid",
       marche: "ROUTE KIFFA BOUMDEID",
       description: "54,6 km, Débroussaillage, décapage, déblais, remblais, fondation, base, revêtement, ouvrages hydrauliques et signalisation.",
       distance: "54,6 km"
     },
     {
       id: "route-17",
-      title: "ROUTE TOUAJIL - CHOUM",
+      title: "Route Touajil - Choum",
       marche: "ROUTE TOUAJIL – CHOUM",
       description: "25 km Décapage, déblais, remblais, fondation, base, revêtement et signalisation.",
       distance: "25 km"
     },
     {
       id: "route-18",
-      title: "ROUTE ATAR - ZOUERATE",
+      title: "Route Atar - Zou2rate",
       marche: "ROUTE ATAR – ZOUERATE LOT3",
       description: "56,369 km, Débroussaillage, décapage, déblais, remblais, fondation, base, revêtement, ouvrages hydrauliques et signalisation.",
       distance: "56,4 km"
     },
     {
       id: "route-19",
-      title: "ROUTE ATAR - TIDJIKJA",
+      title: "Route Atar - Tidjikja",
       marche: "TRAVAUX DE RECONSTRUCTION DE LA ROUTE ATAR TIDJIKJA LOT 2",
       description: "40 km Débroussaillage, décapage, déblais, remblais, fondation, base, revêtement, ouvrages hydrauliques et signalisation",
       distance: "40 km"
     },
     {
       id: "route-20",
-      title: "CARREFOUR AEROPORT CARREFOUR FNT",
+      title: "Carrefour Aéroport Carrefour FNT",
       marche: "REVETEMENT CARREFOUR AEROPORT CARREFOUR FNT",
       description: "Accrochage et enrobés",
       distance: "-"
     },
     {
       id: "route-21",
-      title: "CARREFOUR MADRID TOUJOUNINE",
+      title: "Carrefour Madrid - Toujounine",
       marche: "REVETEMENT CARREFOUR MADRID TOUJOUNINE",
       description: "Accrochage et enrobés",
       distance: "-"
     },
     {
       id: "route-22",
-      title: "CONCORDE GUEYE/PATTE D'OIE/PAN - Carr OULD",
+      title: "Concorde Gueye/Patte d'Oie/PAN - Carrefour Ould Mah",
       marche: "Travaux Carr. CONCORDE GUEYE/PATTE D'OIE/PAN – Carr OULD MAH vers TERMINUS DU LYCEE DE TEYARETT",
       description: "10 km, Décapage, déblais, remblais, fondation, base, revêtement et signalisation.",
       distance: "10 km"
     },
     {
       id: "route-23",
-      title: "ROUTE KSEIR TORCHAN – CHOUM",
+      title: "Route Kseir Torchan – Choum",
       marche: "ROUTE KSEIR TORCHAN – CHOUM",
       description: "13 km, Débroussaillage, décapage, déblais, remblais, fondation, base, revêtement (20 km), ouvrages hydrauliques et signalisation.",
       distance: "13 km"
     },
     {
       id: "route-24",
-      title: "VOIRIE DE NOUAKCHOTT 2013",
+      title: "Voirie de Nouakchott 2013",
       marche: "REVETEMENT VOIRIE DE NOUAKCHOTT",
       description: "11 km d'Imprégnation, accrochage et enrobés",
       distance: "11 km"
     },
     {
       id: "route-25",
-      title: "ROUTE F'DERICK - TOUAJIL",
+      title: "Route F'Derick - Touajil",
       marche: "ROUTE F'DERICK – TOUAJIL",
       description: "22,5 km, Débroussaillage, décapage, déblais, remblais, fondation, base, revêtement, ouvrages hydrauliques et signalisation.",
       distance: "22,5 km"
     },
     {
       id: "route-26",
-      title: "VOIRIE DE NOUAKCHOTT 2012",
+      title: "Voirie de Nouakchott 2012",
       marche: "REVETEMENT VOIRIE DE NOUAKCHOTT",
       description: "2 km d'Imprégnation, accrochage et enrobés",
       distance: "2 km"
     },
     {
       id: "route-27",
-      title: "ROUTE KIFFA - KANKOSSA",
+      title: "Route Kiffa - Kankossa",
       marche: "ROUTE KIFFA – KANKOSSA",
       description: "83 km, Débroussaillage, décapage, déblais, remblais, fondation et base",
       distance: "83 km"
@@ -211,14 +211,14 @@ export default function ProjetsRealisesPage() {
   const perimetresProjects = [
     {
       id: "perimetre-1",
-      title: "Axe hydraulique de TAMBASS",
+      title: "Axe Hydraulique de Tambass",
       marche: "Travaux d'aménagement de l'axe de TAMBASS dans le bassin de Garak (lot 1)",
       description: "curage de l'axe hydraulique sur 5 km (largeur du fond 20 m) construction de 2 digues sur les bords du canal créé et construction d'un ouvrage en béton vanné de deux ouvertures 2×2 : Débroussaillage, Décapage, Déblai en terrain ordinaire, Remblai compacté pour digues, OUVRAGES d'ART et protections.",
       distance: "5 km"
     },
     {
       id: "perimetre-2",
-      title: "MARIGOT DE LAOUEIJA",
+      title: "Marigot de Laoueija",
       marche: "TRAVAUX D'AMENAGEMENT DU MARIGOT DE LAOUEIJA",
       description: "Travaux de faucardage à sec, Travaux de curage et de recalibrage de l'axe hydraulique de Laoueija, Débroussaillage de la végétation, Remblayage de la digue et couche latéritique de 20 cm (protection et de roulement), et Remplacement des vannes et mise en place d'un système de manutention.",
       distance: "-"
@@ -236,7 +236,7 @@ export default function ProjetsRealisesPage() {
     },
     {
       id: "barrage-2",
-      title: "Barrages de R'vigh et Lebeiziye",
+      title: "Barrages de R'Vigh et Lebeiziye",
       marche: "Travaux de construction des barrages de R'vigh et Lebeiziye dans la Moughataa de Bassiknou, Wilaya du Hodh Echarghi (lot 2)",
       description: "Construction de 2 barrages en béton armé : Débroussaillage, Décapage, Déblai en terrain ordinaire, Remblai compacté pour digue, OUVRAGES d'ART et protections.",
       distance: "-"

@@ -12,15 +12,9 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const imageHero = "/images/mtc/image3-scaled.jpg";
 
-//   const sujets = [
-//     "Demande d’information",
-//     "Devis / Appel d’offres",
-//     "Partenariat",
-//     "Support technique",
-//     "Recrutement / Candidature",
-//     "Autre",
-//   ];
+
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -60,7 +54,7 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-white">
-    <Hero titleHero="Contactez-nous" />
+    <Hero titleHero="Contactez-nous" imageHero={imageHero} />
       {/* Hero */}
       <section className="w-full bg-gradient-to-br from-gray-50 via-white to-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:py-16 md:py-20">

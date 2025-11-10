@@ -555,7 +555,7 @@ export default function ProjetsRealisesPage() {
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
                   <Link
-                    href="/contactez-nous"
+                    href="/contact"
                     className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#F26418] to-[#d95712] px-8 py-4 text-white font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#F26418] focus:ring-offset-2"
                   >
                     <span>Contactez-nous</span>

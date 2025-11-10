@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Phone, Mail, Download, FileText } from "lucide-react";
-
+import { ChevronLeft, ChevronRight, Phone, Mail, Download, FileText, Link } from "lucide-react";
+import { useRouter } from "next/navigation";
 type BookState = 
   | { type: "cover" | "final"; image: string; label: string }
   | { type: "open"; leftPage: string; rightPage: string; label: string };
@@ -13,6 +13,7 @@ type FlipBookWithCardProps = {
 };
 
 export default function FlipBookWithCard({ className = "" }: FlipBookWithCardProps) {
+  const router = useRouter();
   const [pageIndex, setPageIndex] = useState(0);
   const [isDownloading, setIsDownloading] = useState(false);
   const [isFlipping, setIsFlipping] = useState(false);
@@ -374,10 +375,12 @@ export default function FlipBookWithCard({ className = "" }: FlipBookWithCardPro
 
               {/* CTA Button */}
               <div className="text-center xl:text-left">
-                <button className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-[#F26418] to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-4 md:px-6 lg:px-8 py-2.5 md:py-3 lg:py-4 text-xs sm:text-sm md:text-base rounded-lg md:rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105">
+                
+                <button  onClick={() => router.push('/contact')} className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-[#F26418] to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-4 md:px-6 lg:px-8 py-2.5 md:py-3 lg:py-4 text-xs sm:text-sm md:text-base rounded-lg md:rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105">
                   <Phone className="size-3 md:size-4 lg:size-5" />
                   Contactez-nous
                 </button>
+              
               
               </div>
             </div>

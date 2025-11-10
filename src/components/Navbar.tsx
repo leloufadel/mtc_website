@@ -345,8 +345,8 @@ const MENU: MenuItem[] = [
   {
     label: "Projets & Réalisations",
     children: [
-      { label: "Project encours", href: "/projets-realisations/projets-encours" },
-      { label: "Project Realise", href: "/projets-realisations/projets-realises" },
+      { label: "Projets en cours", href: "/projets-realisations/projets-encours" },
+      { label: "Projets réalisés", href: "/projets-realisations/projets-realises" },
     ],
   },
   {

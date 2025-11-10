@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Hero from "@/components/hero";
 import Image from "next/image";
 
@@ -24,7 +27,7 @@ type ProjectItem = {
         title: "Construction de stations de pompage",
         description:
           "Travaux de construction de deux (02)  stations de pompage, fourniture et installation d’équipements électromécaniques et électriques du périmètre de SOKAM ( LOT 2 : SP2 et SP3)",
-        image: "/images/projects/image3.webp",
+        image: "/images/projects/Projet Sokam _SP2.jpg",
       },
   ];
   
@@ -33,6 +36,7 @@ type ProjectItem = {
   }
 
 export default function ProjetsEnCoursPage() {
+    const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
     const titleHero = "Projets en cours";
     const imageHero = ["/images/mtc/new/20180610_142523-scaled.jpg", "/images/mtc/home/image2025-10-01.24.jpeg" ,"/images/bassins/Mj.jpg"];
 
@@ -70,11 +74,12 @@ export default function ProjetsEnCoursPage() {
                   {/* Image */}
                   <div
                     className={cx(
-                      "relative overflow-hidden rounded-2xl shadow-2xl",
+                      "relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer",
                       "transition-all duration-500",
                       "group-hover:shadow-3xl group-hover:scale-[1.02]",
                       isLeft ? "md:order-1" : "md:order-2"
                     )}
+                    onClick={() => setSelectedImage({ src: p.image, alt: p.title })}
                   >
                     <div className="relative aspect-[4/3] md:aspect-[3/2]">
                       <Image
@@ -87,6 +92,13 @@ export default function ProjetsEnCoursPage() {
                       />
                       {/* Gradient overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      
+                      {/* Zoom Icon */}
+                      <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                        <svg className="w-5 h-5 text-[#F26418]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
 
@@ -130,6 +142,45 @@ export default function ProjetsEnCoursPage() {
         </div>
       </div>
     </section>
+
+      {/* Lightbox Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          {/* Close Button */}
+          <button
+            className="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-colors duration-300 z-10"
+            onClick={() => setSelectedImage(null)}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          {/* Image Container */}
+          <div className="relative w-full h-full max-w-7xl max-h-[90vh] flex items-center justify-center">
+            <div className="relative w-full h-full">
+              <Image
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                fill
+                className="object-contain"
+                quality={95}
+                onClick={(e) => e.stopPropagation()}
+              />
+            </div>
+
+            {/* Image Caption */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+              <p className="text-white text-lg font-medium text-center">
+                {selectedImage.alt}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
         </main>
     )
 }

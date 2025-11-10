@@ -353,6 +353,10 @@ const MENU: MenuItem[] = [
     label: "Actualités",
     href: "/actualites",
   },
+  {
+    label: "Galerie",
+    href: "/galerie",
+  },
 ];
 
 function useClickOutside<T extends HTMLElement>(onClose: () => void) {
